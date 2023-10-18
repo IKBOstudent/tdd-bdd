@@ -19,7 +19,19 @@ def solve_quadratic_equation(a, b, c):
 
 
 def matrix_sum(matrix1, matrix2):
-    pass
+    # Проверяем, что размерности матриц совпадают
+    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+        return None
+
+    # Создаем пустую матрицу для результата
+    result = [[0 for _ in range(len(matrix1[0]))] for _ in range(len(matrix1))]
+
+    # Выполняем сложение элементов матриц
+    for i in range(len(matrix1)):
+        for j in range(len(matrix1[0])):
+            result[i][j] = matrix1[i][j] + matrix2[i][j]
+
+    return result
 
 
 def main():
