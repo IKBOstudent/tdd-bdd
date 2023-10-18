@@ -1,3 +1,7 @@
+def solve_quadratic_equation(a, b, c):
+    pass
+
+
 def main():
     while True:
         print("Выберите опцию калькулятора:")
