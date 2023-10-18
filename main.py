@@ -18,6 +18,10 @@ def solve_quadratic_equation(a, b, c):
         return None
 
 
+def matrix_sum(matrix1, matrix2):
+    pass
+
+
 def main():
     while True:
         print("Выберите опцию калькулятора:")
