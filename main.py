@@ -39,7 +39,13 @@ def transpone_matrix(matrix):
 
 
 def calculate_factorial(number):
-    pass
+    if number < 0:
+        return None
+
+    factorial_value = 1
+    for i in range(1, number + 1):
+        factorial_value *= i
+    return factorial_value
 
 
 def matrix_sum(matrix1, matrix2):
