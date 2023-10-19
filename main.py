@@ -65,7 +65,15 @@ def matrix_sum(matrix1, matrix2):
 
 
 def integrate_trap(f, a, b, h):
-    pass
+    if h <= 0:
+        return 0
+
+    s = 0.5 * (f(a) + f(b))
+    x = a + h
+    while x <= b - h:
+        s += f(x)
+        x += h
+    return h * s
 
 
 def main():
