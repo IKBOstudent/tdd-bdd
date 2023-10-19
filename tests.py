@@ -1,6 +1,5 @@
 import unittest
-from main import solve_quadratic_equation
-
+from main import solve_quadratic_equation,transpone_matrix
 
 class TestSolveQuadraticEquation(unittest.TestCase):
     def test_discriminant_positive(self):
@@ -15,3 +14,25 @@ class TestSolveQuadraticEquation(unittest.TestCase):
         result = solve_quadratic_equation(1, 1, 1)
         self.assertIsNone(result)
 
+
+class TestTransposeMatrix(unittest.TestCase):
+
+    def test_transpose_matrix_valid(self):
+        # Проверка транспонирования матрицы с допустимой размерностью
+        matrix = [[1, 2, 3], [4, 5, 6]]
+        expected_result = [[1, 4], [2, 5], [3, 6]]
+        result = transpone_matrix(matrix)
+        self.assertEqual(result, expected_result)
+
+    def test_transpose_matrix_empty(self):
+        # Проверка транспонирования пустой матрицы
+        matrix = []
+        result = transpone_matrix(matrix)
+        self.assertEqual(result, [])
+
+    def test_transpose_matrix_irregular(self):
+        # Проверка транспонирования матрицы с разной длиной строк
+        matrix = [[1, 2, 3], [4, 5]]
+        expected_result = [[1, 4], [2, 5], [3, None]]
+        result = transpone_matrix(matrix)
+        self.assertEqual(result, expected_result)
