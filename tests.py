@@ -36,3 +36,24 @@ class TestTransposeMatrix(unittest.TestCase):
         expected_result = [[1, 4], [2, 5], [3, None]]
         result = transpone_matrix(matrix)
         self.assertEqual(result, expected_result)
+
+
+class TestIntegrateTrapezoidal(unittest.TestCase):
+    def test_integral_of_x_squared(self):
+        def f(x):
+            return x ** 2
+        result = integrate_trap(f, 0, 1, 0.1)
+        self.assertAlmostEqual(result, 0.3333333, places=2)
+
+    def test_integral_of_constant_function(self):
+        def f(x):
+            return 5
+        result = integrate_trap(f, 1, 5, 1)
+        self.assertEqual(result, 20)
+
+    def test_negative_step_size(self):
+        def f(x):
+            return x
+        result = integrate_trap(f, 0, 1, -0.1)
+        self.assertEqual(result, 0)
+
