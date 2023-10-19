@@ -17,8 +17,26 @@ def solve_quadratic_equation(a, b, c):
     else:
         return None
 
+
 def transpone_matrix(matrix):
-    pass
+    if not matrix:
+        return []
+
+    num_rows = len(matrix)
+    num_cols = len(matrix[0])
+
+    # Находим максимальную длину строки в матрице
+    max_row_length = max(len(row) for row in matrix)
+
+    transposed = [[None] * num_rows for _ in range(max_row_length)]
+
+    for i in range(num_rows):
+        for j in range(num_cols):
+            if j < len(matrix[i]):
+                transposed[j][i] = matrix[i][j]
+
+    return transposed
+
 
 def matrix_sum(matrix1, matrix2):
     # Проверяем, что размерности матриц совпадают
