@@ -38,6 +38,10 @@ def transpone_matrix(matrix):
     return transposed
 
 
+def calculate_factorial(number):
+    pass
+
+
 def matrix_sum(matrix1, matrix2):
     # Проверяем, что размерности матриц совпадают
     if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
