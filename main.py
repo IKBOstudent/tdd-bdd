@@ -64,6 +64,10 @@ def matrix_sum(matrix1, matrix2):
     return result
 
 
+def integrate_trap(f, a, b, h):
+    pass
+
+
 def main():
     while True:
         print("Выберите опцию калькулятора:")
