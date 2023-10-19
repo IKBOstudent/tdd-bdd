@@ -77,7 +77,25 @@ def integrate_trap(f, a, b, h):
 
 
 def get_inverse_matrix(matrix):
-    pass
+    n = len(matrix)
+    augmented_matrix = [row + [0] * n for row in matrix]
+    for i in range(n):
+        augmented_matrix[i][n + i] = 1
+
+    for i in range(n):
+        pivot = augmented_matrix[i][i]
+
+        if pivot == 0:
+            return None
+        for j in range(2 * n):
+            augmented_matrix[i][j] /= pivot
+        for k in range(n):
+            if k != i:
+                factor = augmented_matrix[k][i]
+                for j in range(2 * n):
+                    augmented_matrix[k][j] -= factor * augmented_matrix[i][j]
+
+    return [row[n:] for row in augmented_matrix]
 
 
 def main():
