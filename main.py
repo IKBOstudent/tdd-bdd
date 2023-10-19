@@ -76,6 +76,10 @@ def integrate_trap(f, a, b, h):
     return h * s
 
 
+def get_inverse_matrix(matrix):
+    pass
+
+
 def main():
     while True:
         print("Выберите опцию калькулятора:")
