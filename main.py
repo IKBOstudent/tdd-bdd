@@ -17,6 +17,8 @@ def solve_quadratic_equation(a, b, c):
     else:
         return None
 
+def transpone_matrix(matrix):
+    pass
 
 def matrix_sum(matrix1, matrix2):
     # Проверяем, что размерности матриц совпадают
